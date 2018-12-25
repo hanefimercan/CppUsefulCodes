@@ -3,14 +3,11 @@
 // Example usage of fork() funciton for multi-processing on UNIX based systems
 // Note that this code will not work on a Windows machine.
 
-
-
 /*
 fork() creates a new process by duplicating the calling process.  
 The new process is referred to as the child process.  
 The calling process is referred to as the parent process.
 */
-
 
 #include <iostream>
 #include <unistd.h>
@@ -59,4 +56,3 @@ int main()
 
     return 0;
 }
-
