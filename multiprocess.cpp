@@ -4,9 +4,10 @@
 // Note that this code will not work on a Windows machine.
 
 /*
-fork() creates a new process by duplicating the calling process.  
-The new process is referred to as the child process.  
-The calling process is referred to as the parent process.
+Taken from manual: http://man7.org/linux/man-pages/man2/fork.2.html
+   fork() creates a new process by duplicating the calling process.  
+   The new process is referred to as the child process.  
+   The calling process is referred to as the parent process.
 */
 
 #include <iostream>
