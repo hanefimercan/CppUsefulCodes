@@ -21,13 +21,13 @@ int main()
     srand(time(NULL));
     pid_t pid = fork();
     int rndTime1, rndTime2;
-    rndTime1 = rand();
-    rndTime2 = rand();
+    rndTime1 = rand() % 293;  
+    rndTime2 = rndTime1 + (rand() % 3 + 1);
     if (pid == 0)  // child process, process id is 0
     {
         for (int i = 0; i < 5; ++i)
         {
-            rndTime1 = (rand() + rndTime1) % 3 + 1;  // make a random wait
+            rndTime1 = (rand() + rndTime1) % 5 + 1;  // make a random wait
             cout << "Child process with pid " << pid << ", at loop iteration " << i;
             cout << ", waiting " << rndTime1 << " seconds." << endl;
             sleep(rndTime1);
@@ -37,7 +37,7 @@ int main()
     {
         for (int i = 0; i < 5; ++i)
         {
-            rndTime2 = (rand() + rndTime2) % 3 + 1;  // make a random wait
+            rndTime2 = (rand() + rndTime2) % 5 + 1;  // make a random wait
             cout << "Parent process with pid " << pid << ", at loop iteration " << i;
             cout << ", waiting " << rndTime2 << " seconds." << endl;
             sleep(rndTime2);
