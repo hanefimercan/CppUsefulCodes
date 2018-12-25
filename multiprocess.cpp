@@ -12,7 +12,7 @@ The calling process is referred to as the parent process.
 #include <iostream>
 #include <unistd.h>
 #include <ctime>
-#include<sys/wait.h>
+#include <sys/wait.h>
 
 using namespace std;
 int main()
