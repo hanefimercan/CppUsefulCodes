@@ -26,7 +26,7 @@ int main()
     {
         for (int i = 0; i < 5; ++i)
         {
-            rndTime1 = (rand() + rndTime1) % 3 + 1;
+            rndTime1 = (rand() + rndTime1) % 3 + 1;  // make a random wait
             cout << "Child process with pid " << pid << ", at loop iteration " << i;
             cout << ", waiting " << rndTime1 << " seconds." << endl;
             sleep(rndTime1);
@@ -36,7 +36,7 @@ int main()
     {
         for (int i = 0; i < 5; ++i)
         {
-            rndTime2 = (rand() + rndTime2) % 3 + 1;
+            rndTime2 = (rand() + rndTime2) % 3 + 1;  // make a random wait
             cout << "Parent process with pid " << pid << ", at loop iteration " << i;
             cout << ", waiting " << rndTime2 << " seconds." << endl;
             sleep(rndTime2);
@@ -50,9 +50,8 @@ int main()
 
     cout << "** I am done, my pid is " << pid << endl;
     
-    int status = 0;
     while ((wait(NULL)) > 0); // Suspends the execution of the calling (in this case parent) 
                               // process as long as a child process is alive
-
+    
     return 0;
 }
