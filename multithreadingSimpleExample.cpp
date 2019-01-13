@@ -9,7 +9,7 @@
 using namespace std;
 mutex mut;
 
-void threadLock(int num)  // with locking
+void threadLock(int num)  
 {
 	lock_guard<mutex> guard(mut);  // locks until thread leaves the function (i.e., the scope of mutex)
 	for (int i = 0; i < 5; i++)
