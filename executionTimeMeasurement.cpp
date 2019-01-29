@@ -5,13 +5,17 @@
 using namespace std::chrono;
 using namespace std;
 
+
 int main()
 {  
-	const auto begin = high_resolution_clock::now();  // gets the current time in miliseconds
+	high_resolution_clock::time_point begin = high_resolution_clock::now();  // gets the current time in miliseconds
 	cout << "Hello world!" << endl;
 	this_thread::sleep_for(std::chrono::seconds(2));
-	const auto end = high_resolution_clock::now();
-	auto time = end - begin;
-	cout << "Elapsed time: " << duration<double, std::milli>(time).count() << " ms.\n";
+	high_resolution_clock::time_point end = high_resolution_clock::now();
+	auto time = end - begin; // auto becomes high_resolution_clock::time_point
+	duration<double> timeMilliSeconds = duration<double, std::milli>(time);
+	cout << "Elapsed time: " << timeMilliSeconds.count() << " ms.\n";
+	cout << "Elapsed time: " << timeMilliSeconds.count() / 1000.0 << " sec.\n";
 	return 0;
 }
+
