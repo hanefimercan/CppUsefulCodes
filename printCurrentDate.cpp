@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void printcurrentDate()
+void printCurrentDate()
 {
     time_t t = std::time(0);   // get time now
     tm* now = std::localtime(&t);
