@@ -1,17 +1,23 @@
-#include <ctime>
 #include <iostream>
+#include <string>
+#include <stdio.h>
+#include <time.h>
+
 using namespace std;
 
-void printCurrentDate()
+// Get current date/time, format is YYYY-MM-DD.HH:mm:ss
+const string getCurrentDateTime() 
 {
-    time_t t = std::time(0);   // get time now
-    tm* now = std::localtime(&t);
-    cout << (now->tm_year + 1900) << '-' << (now->tm_mon + 1) << '-' <<  now->tm_mday;
+    time_t now = time(0);
+    struct tm tstruct;
+    char buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+    return buf;
 }
 
 int main() 
 {
-    printcurrentDate();
-    cout << endl;
+    cout << "currentDateTime()=" << getCurrentDateTime() << endl;    
     return 0;
 }
