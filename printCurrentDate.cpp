@@ -18,6 +18,6 @@ const string getCurrentDateTime()
 
 int main() 
 {
-    cout << "currentDateTime()=" << getCurrentDateTime() << endl;    
+    cout << "Current date and time: " << getCurrentDateTime() << endl;    
     return 0;
 }
